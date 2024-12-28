@@ -131,7 +131,7 @@ router.post('/notes', upload.single('recfile'), async (req, res) => {
     const recfile = result.url;
 
     let newNotes = await pool.query(
-      'INSERT INTO notes (class_year_content,teacher_email, notes_title, short_note, notes_url ) VALUES ($1, $2, $3,$4,$5) RETURNING *',
+      'INSERT INTO notes (class_year_content,teacher_email, notes_title, short_notes, notes_url ) VALUES ($1, $2, $3,$4,$5) RETURNING *',
       [classe, email, title, summary, recfile],
     );
     const emails = (

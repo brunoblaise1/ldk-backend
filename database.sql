@@ -117,18 +117,28 @@ CREATE TABLE courses(
   
 );
 
+-- CREATE TABLE quiz(
+--   course_name VARCHAR(255) NOT NULL,
+--   quiz_answer VARCHAR(255) NOT NULL,
+--   quiz_choice VARCHAR[4] NOT NULL,
+--   id uuid DEFAULT uuid_generate_v4(),
+--   quiz_name VARCHAR(100) NOT NULL,
+--   quiz_question VARCHAR(255) NOT NULL,
+--   teacher_email VARCHAR(255) NOT NULL,
+--   created_at timestamp default current_timestamp,
+--   PRIMARY KEY(id)
+-- );
+
 CREATE TABLE quiz(
   course_name VARCHAR(255) NOT NULL,
   quiz_answer VARCHAR(255) NOT NULL,
   quiz_choice VARCHAR[4] NOT NULL,
   id uuid DEFAULT uuid_generate_v4(),
-  quiz_name VARCHAR(100) NOT NULL,
   quiz_question VARCHAR(255) NOT NULL,
   teacher_email VARCHAR(255) NOT NULL,
   created_at timestamp default current_timestamp,
   PRIMARY KEY(id)
 );
-
 CREATE TABLE open(
   content TEXT NOT NULL,
   course_name VARCHAR(255) NOT NULL,
