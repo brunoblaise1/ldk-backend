@@ -78,7 +78,7 @@ router.post('/registerS', uploaders, async (req, res) => {
       [email],
     );
 
-    if (school.rows.length > 0) {
+    if (school.rows.length === 0) {
       return res.status(401).json("User doesn't exit in this!");
     }else if(user.rows.length > 0){
       return res.status(401).json('User already exist!');
@@ -188,7 +188,7 @@ router.post('/registerT', uploaders, async (req, res) => {
       [email],
     );
 
-    if (school.rows.length > 0) {
+    if (school.rows.length === 0) {
       return res.status(401).json("User doesn't exit in this!");
     }else if(user.rows.length > 0){
       return res.status(401).json('User already exist!');
