@@ -74,7 +74,7 @@ router.post('/registerS', uploaders, async (req, res) => {
       [email],
     );
     const school = await pool.query(
-      'SELECT * FROM schoolS WHERE student_email = $1',
+      'SELECT * FROM schoolS WHERE names = $1',
       [email],
     );
 
@@ -184,7 +184,7 @@ router.post('/registerT', uploaders, async (req, res) => {
     );
    
     const school = await pool.query(
-      'SELECT * FROM schoolT WHERE student_email = $1',
+      'SELECT * FROM schoolT WHERE names = $1',
       [email],
     );
 
